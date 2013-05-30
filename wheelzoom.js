@@ -3,14 +3,21 @@ zoomLevel     = 1;
 zoomIncrement = 0.2;
 
 window.addEventListener("mousewheel", function( event ) {
+
     if( zoomWithWheel ) {
+
+        event.preventDefault();
+        event.stopPropagation();
+        
         if( event.wheelDeltaY > 0  ) {
             zoomLevel += zoomIncrement;
         }
         if( event.wheelDeltaY < 0 ) {
             zoomLevel -= zoomIncrement;
         }
-        document.body.style.zoom = zoomLevel;
+        // CSS transform works much less jankily than zoom
+        document.body.style.webkitTransform = "scale(" + zoomLevel + ")";
+        document.body.style.webkitTransformOrigin="0 0";
         return false;
     }
 }, true );
