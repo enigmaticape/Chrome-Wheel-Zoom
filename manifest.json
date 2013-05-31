@@ -3,7 +3,13 @@
 
 	"name": "Wheel Zoom",
 	"description": "Mouse Wheel Zooming.",
-	"version": "1.0",
+	"version": "1.2",
+
+	"icons" : { 
+		"16"  : "viicon16.png",
+		"48"  : "viicon48.png",
+		"128" : "viicon128.png" 
+	},
 
 	"permissions": [ 
 		"tabs", 

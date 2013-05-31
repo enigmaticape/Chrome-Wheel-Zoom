@@ -5,10 +5,10 @@ zoomIncrement = 0.2;
 window.addEventListener("mousewheel", function( event ) {
 
     if( zoomWithWheel ) {
-
+        
         event.preventDefault();
         event.stopPropagation();
-        
+
         if( event.wheelDeltaY > 0  ) {
             zoomLevel += zoomIncrement;
         }
