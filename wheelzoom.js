@@ -6,8 +6,6 @@ window.addEventListener("mousewheel", function( event ) {
 
     if( zoomWithWheel ) {
         
-        event.preventDefault();
-        event.stopPropagation();
 
         if( event.wheelDeltaY > 0  ) {
             zoomLevel += zoomIncrement;
@@ -18,7 +16,9 @@ window.addEventListener("mousewheel", function( event ) {
         // CSS transform works much less jankily than zoom
         document.body.style.webkitTransform = "scale(" + zoomLevel + ")";
         document.body.style.webkitTransformOrigin="0 0";
-        return false;
+        
+        event.preventDefault();
+        event.stopPropagation();
     }
 }, true );
 
